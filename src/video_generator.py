@@ -40,10 +40,10 @@ class VideoGenerator:
             answer_text = f"{note_text}\n{interval_name}\n{interval_semitones}"
             
             # 创建答案显示片段
-            answer_clip = self.create_text_clip(answer_text, 3, current_time + 4)
+            answer_clip = self.create_text_clip(answer_text, 2, current_time + 4)
             clips.append(answer_clip)
             
-            current_time += 7  # 每个片段总时长：4秒静音 + 3秒显示答案
+            current_time += 6  # 每个片段总时长：4秒静音 + 2秒显示答案
         
         # 合并所有片段
         final_clip = CompositeVideoClip(clips, size=(self.width, self.height))
