@@ -50,5 +50,13 @@ class VideoGenerator:
         final_clip = final_clip.set_audio(audio)
         
         # 导出视频
-        final_clip.write_videofile(output_file, fps=self.fps, codec='libx264')
+        # final_clip.write_videofile(output_file, fps=self.fps, codec='libx264')
+        final_clip.write_videofile(
+            output_file,
+            fps=self.fps,
+            codec='libx264',
+            audio_codec='aac',
+            audio_bitrate='192k'
+        )
+
         return output_file 
